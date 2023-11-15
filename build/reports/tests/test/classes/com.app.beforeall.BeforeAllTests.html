@@ -1,0 +1,169 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8"/>
+<meta http-equiv="x-ua-compatible" content="IE=edge"/>
+<title>Test results - BeforeAllTests</title>
+<link href="../css/base-style.css" rel="stylesheet" type="text/css"/>
+<link href="../css/style.css" rel="stylesheet" type="text/css"/>
+<script src="../js/report.js" type="text/javascript"></script>
+</head>
+<body>
+<div id="content">
+<h1>BeforeAllTests</h1>
+<div class="breadcrumbs">
+<a href="../index.html">all</a> &gt; 
+<a href="../packages/com.app.beforeall.html">com.app.beforeall</a> &gt; BeforeAllTests</div>
+<div id="summary">
+<table>
+<tr>
+<td>
+<div class="summaryGroup">
+<table>
+<tr>
+<td>
+<div class="infoBox" id="tests">
+<div class="counter">1</div>
+<p>tests</p>
+</div>
+</td>
+<td>
+<div class="infoBox" id="failures">
+<div class="counter">0</div>
+<p>failures</p>
+</div>
+</td>
+<td>
+<div class="infoBox" id="ignored">
+<div class="counter">0</div>
+<p>ignored</p>
+</div>
+</td>
+<td>
+<div class="infoBox" id="duration">
+<div class="counter">1.695s</div>
+<p>duration</p>
+</div>
+</td>
+</tr>
+</table>
+</div>
+</td>
+<td>
+<div class="infoBox success" id="successRate">
+<div class="percent">100%</div>
+<p>successful</p>
+</div>
+</td>
+</tr>
+</table>
+</div>
+<div id="tabs">
+<ul class="tabLinks">
+<li>
+<a href="#tab0">Tests</a>
+</li>
+<li>
+<a href="#tab1">Standard output</a>
+</li>
+</ul>
+<div id="tab0" class="tab">
+<h2>Tests</h2>
+<table>
+<thead>
+<tr>
+<th>Test</th>
+<th>Duration</th>
+<th>Result</th>
+</tr>
+</thead>
+<tr>
+<td class="success">createBaseData()</td>
+<td class="success">1.695s</td>
+<td class="success">passed</td>
+</tr>
+</table>
+</div>
+<div id="tab1" class="tab">
+<h2>Standard output</h2>
+<span class="code">
+<pre>11:58:28.554 [Test worker] INFO org.springframework.test.context.support.AnnotationConfigContextLoaderUtils -- Could not detect default configuration classes for test class [com.app.beforeall.BeforeAllTests]: BeforeAllTests does not declare any static, non-private, non-final, nested classes annotated with @Configuration.
+11:58:28.648 [Test worker] INFO org.springframework.boot.test.context.SpringBootTestContextBootstrapper -- Found @SpringBootConfiguration com.app.GeneralApplication for test class com.app.beforeall.BeforeAllTests
+
+  .   ____          _            __ _ _
+ /\\ / ___'_ __ _ _(_)_ __  __ _ \ \ \ \
+( ( )\___ | '_ | '_| | '_ \/ _` | \ \ \ \
+ \\/  ___)| |_)| | | | | || (_| |  ) ) ) )
+  '  |____| .__|_| |_|_| |_\__, | / / / /
+ =========|_|==============|___/=/_/_/_/
+ :: Spring Boot ::                (v3.1.4)
+
+2023-11-15T11:58:28.935+05:30  INFO 25170 --- [    Test worker] com.app.beforeall.BeforeAllTests         : Starting BeforeAllTests using Java 17.0.4 with PID 25170 (started by singh in /Users/singh/work/learnings/spring/cashcard)
+2023-11-15T11:58:28.937+05:30  INFO 25170 --- [    Test worker] com.app.beforeall.BeforeAllTests         : No active profile set, falling back to 1 default profile: &quot;default&quot;
+2023-11-15T11:58:29.433+05:30  INFO 25170 --- [    Test worker] .s.d.r.c.RepositoryConfigurationDelegate : Multiple Spring Data modules found, entering strict repository configuration mode
+2023-11-15T11:58:29.435+05:30  INFO 25170 --- [    Test worker] .s.d.r.c.RepositoryConfigurationDelegate : Bootstrapping Spring Data JDBC repositories in DEFAULT mode.
+2023-11-15T11:58:29.462+05:30  INFO 25170 --- [    Test worker] .RepositoryConfigurationExtensionSupport : Spring Data JDBC - Could not safely identify store assignment for repository candidate interface com.app.calender.repos.EventRepository; If you want this repository to be a JDBC repository, consider annotating your entities with one of these annotations: org.springframework.data.relational.core.mapping.Table.
+2023-11-15T11:58:29.463+05:30  INFO 25170 --- [    Test worker] .RepositoryConfigurationExtensionSupport : Spring Data JDBC - Could not safely identify store assignment for repository candidate interface com.app.cashcard.CashCardRepository; If you want this repository to be a JDBC repository, consider annotating your entities with one of these annotations: org.springframework.data.relational.core.mapping.Table.
+2023-11-15T11:58:29.463+05:30  INFO 25170 --- [    Test worker] .RepositoryConfigurationExtensionSupport : Spring Data JDBC - Could not safely identify store assignment for repository candidate interface com.app.common.user.Role.RoleRepository; If you want this repository to be a JDBC repository, consider annotating your entities with one of these annotations: org.springframework.data.relational.core.mapping.Table.
+2023-11-15T11:58:29.464+05:30  INFO 25170 --- [    Test worker] .RepositoryConfigurationExtensionSupport : Spring Data JDBC - Could not safely identify store assignment for repository candidate interface com.app.common.user.UserRepository; If you want this repository to be a JDBC repository, consider annotating your entities with one of these annotations: org.springframework.data.relational.core.mapping.Table.
+2023-11-15T11:58:29.464+05:30  INFO 25170 --- [    Test worker] .s.d.r.c.RepositoryConfigurationDelegate : Finished Spring Data repository scanning in 26 ms. Found 0 JDBC repository interfaces.
+2023-11-15T11:58:29.472+05:30  INFO 25170 --- [    Test worker] .s.d.r.c.RepositoryConfigurationDelegate : Multiple Spring Data modules found, entering strict repository configuration mode
+2023-11-15T11:58:29.473+05:30  INFO 25170 --- [    Test worker] .s.d.r.c.RepositoryConfigurationDelegate : Bootstrapping Spring Data JPA repositories in DEFAULT mode.
+2023-11-15T11:58:29.502+05:30  INFO 25170 --- [    Test worker] .s.d.r.c.RepositoryConfigurationDelegate : Finished Spring Data repository scanning in 26 ms. Found 4 JPA repository interfaces.
+2023-11-15T11:58:29.909+05:30  INFO 25170 --- [    Test worker] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat initialized with port(s): 0 (http)
+2023-11-15T11:58:29.918+05:30  INFO 25170 --- [    Test worker] o.apache.catalina.core.StandardService   : Starting service [Tomcat]
+2023-11-15T11:58:29.918+05:30  INFO 25170 --- [    Test worker] o.apache.catalina.core.StandardEngine    : Starting Servlet engine: [Apache Tomcat/10.1.13]
+2023-11-15T11:58:29.994+05:30  INFO 25170 --- [    Test worker] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring embedded WebApplicationContext
+2023-11-15T11:58:29.995+05:30  INFO 25170 --- [    Test worker] w.s.c.ServletWebServerApplicationContext : Root WebApplicationContext: initialization completed in 1041 ms
+2023-11-15T11:58:30.077+05:30  INFO 25170 --- [    Test worker] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Starting...
+2023-11-15T11:58:30.305+05:30  INFO 25170 --- [    Test worker] com.zaxxer.hikari.pool.HikariPool        : HikariPool-1 - Added connection com.mysql.cj.jdbc.ConnectionImpl@27afbf14
+2023-11-15T11:58:30.306+05:30  INFO 25170 --- [    Test worker] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Start completed.
+2023-11-15T11:58:30.370+05:30  INFO 25170 --- [    Test worker] o.hibernate.jpa.internal.util.LogHelper  : HHH000204: Processing PersistenceUnitInfo [name: default]
+2023-11-15T11:58:30.414+05:30  INFO 25170 --- [    Test worker] org.hibernate.Version                    : HHH000412: Hibernate ORM core version 6.2.9.Final
+2023-11-15T11:58:30.416+05:30  INFO 25170 --- [    Test worker] org.hibernate.cfg.Environment            : HHH000406: Using bytecode reflection optimizer
+2023-11-15T11:58:30.527+05:30  INFO 25170 --- [    Test worker] o.h.b.i.BytecodeProviderInitiator        : HHH000021: Bytecode provider name : bytebuddy
+2023-11-15T11:58:30.646+05:30  INFO 25170 --- [    Test worker] o.s.o.j.p.SpringPersistenceUnitInfo      : No LoadTimeWeaver setup: ignoring JPA class transformer
+2023-11-15T11:58:30.914+05:30  INFO 25170 --- [    Test worker] o.h.b.i.BytecodeProviderInitiator        : HHH000021: Bytecode provider name : bytebuddy
+2023-11-15T11:58:31.495+05:30  INFO 25170 --- [    Test worker] o.h.e.t.j.p.i.JtaPlatformInitiator       : HHH000490: Using JtaPlatform implementation: [org.hibernate.engine.transaction.jta.platform.internal.NoJtaPlatform]
+2023-11-15T11:58:31.743+05:30  INFO 25170 --- [    Test worker] j.LocalContainerEntityManagerFactoryBean : Initialized JPA EntityManagerFactory for persistence unit 'default'
+2023-11-15T11:58:32.147+05:30  WARN 25170 --- [    Test worker] JpaBaseConfiguration$JpaWebConfiguration : spring.jpa.open-in-view is enabled by default. Therefore, database queries may be performed during view rendering. Explicitly configure spring.jpa.open-in-view to disable this warning
+2023-11-15T11:58:32.730+05:30  INFO 25170 --- [    Test worker] o.s.s.web.DefaultSecurityFilterChain     : Will secure any request with [org.springframework.security.web.session.DisableEncodeUrlFilter@46bbcb82, org.springframework.security.web.context.request.async.WebAsyncManagerIntegrationFilter@b91e024, org.springframework.security.web.context.SecurityContextHolderFilter@4407f129, org.springframework.security.web.header.HeaderWriterFilter@71979130, org.springframework.security.web.authentication.logout.LogoutFilter@63e0c744, org.springframework.security.web.savedrequest.RequestCacheAwareFilter@76fdd5f1, org.springframework.security.web.servletapi.SecurityContextHolderAwareRequestFilter@513fb873, com.app.config.security.JWTAuthenticationFilter@309ac89e, org.springframework.security.web.authentication.AnonymousAuthenticationFilter@2db0dd19, org.springframework.security.web.session.SessionManagementFilter@541c76fd, org.springframework.security.web.access.ExceptionTranslationFilter@6ff05f85, org.springframework.security.web.access.intercept.FilterSecurityInterceptor@730611a0]
+2023-11-15T11:58:32.952+05:30  INFO 25170 --- [    Test worker] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat started on port(s): 65456 (http) with context path ''
+2023-11-15T11:58:32.966+05:30  INFO 25170 --- [    Test worker] com.app.beforeall.BeforeAllTests         : Started BeforeAllTests in 4.208 seconds (process running for 5.019)
+2023-11-15T11:58:33.547+05:30  INFO 25170 --- [o-auto-1-exec-1] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring DispatcherServlet 'dispatcherServlet'
+2023-11-15T11:58:33.547+05:30  INFO 25170 --- [o-auto-1-exec-1] o.s.web.servlet.DispatcherServlet        : Initializing Servlet 'dispatcherServlet'
+2023-11-15T11:58:33.548+05:30  INFO 25170 --- [o-auto-1-exec-1] o.s.web.servlet.DispatcherServlet        : Completed initialization in 1 ms
+2023-11-15T11:58:33.685+05:30  INFO 25170 --- [o-auto-1-exec-1] c.app.common.user.Role.RoleController    : Saved role: Role{id=1, name='ADMINTEST', description='Admin Test Role'}
+2023-11-15T11:58:33.736+05:30  INFO 25170 --- [    Test worker] com.app.beforeall.BeforeAllTests         : Created role ADMINTEST: 1
+2023-11-15T11:58:33.748+05:30  INFO 25170 --- [o-auto-1-exec-2] c.app.common.user.Role.RoleController    : Saved role: Role{id=2, name='USERTEST', description='User Test Role'}
+2023-11-15T11:58:33.750+05:30  INFO 25170 --- [    Test worker] com.app.beforeall.BeforeAllTests         : Created role USERTEST: 2
+2023-11-15T11:58:33.760+05:30  INFO 25170 --- [o-auto-1-exec-3] c.app.common.user.Role.RoleController    : Saved role: Role{id=3, name='GUESTTEST', description='Guest Test Role'}
+2023-11-15T11:58:33.762+05:30  INFO 25170 --- [    Test worker] com.app.beforeall.BeforeAllTests         : Created role GUESTTEST: 3
+2023-11-15T11:58:33.877+05:30  INFO 25170 --- [o-auto-1-exec-4] com.app.common.user.UserController       : Saved User: User{id=4852, name='name_1', username='amanpreetsingh', hashword='{bcrypt}$2a$10$uZ6PFwEmQXLZ/9IT2XpA5uGIz3gf/vnzaudmktMRvzNr.40FeyRkq', startTime=2023-11-15T06:28:28.729281Z, role=[Role{id=2, name='USERTEST', description='User Test Role'}]}
+2023-11-15T11:58:33.961+05:30  INFO 25170 --- [o-auto-1-exec-5] com.app.common.user.UserController       : Saved User: User{id=4853, name='name_2', username='username_2', hashword='{bcrypt}$2a$10$H8n2liZa5aHmWYMLqGFlz.TXxNycEsLkh341mhry0ExtXv4M3vsyy', startTime=2023-11-15T06:28:28.729300Z, role=[Role{id=3, name='GUESTTEST', description='Guest Test Role'}]}
+2023-11-15T11:58:34.042+05:30  INFO 25170 --- [o-auto-1-exec-6] com.app.common.user.UserController       : Saved User: User{id=4854, name='name_3', username='username_3', hashword='{bcrypt}$2a$10$cMv1GKbGYlYi/NbcIfKZ/eTXxyxxehV8kND0hbbAobJNv06bY.9hW', startTime=2023-11-15T06:28:28.729308Z, role=[Role{id=1, name='ADMINTEST', description='Admin Test Role'}]}
+2023-11-15T11:58:34.120+05:30  INFO 25170 --- [o-auto-1-exec-7] com.app.common.user.UserController       : Saved User: User{id=4855, name='name_4', username='username_4', hashword='{bcrypt}$2a$10$aM8Ea8bzebPK8eJdlH5g3uJDlAhd73o.iXTNycJg4yoVArHf2pdmS', startTime=2023-11-15T06:28:28.729316Z, role=[Role{id=2, name='USERTEST', description='User Test Role'}]}
+2023-11-15T11:58:34.197+05:30  INFO 25170 --- [o-auto-1-exec-8] com.app.common.user.UserController       : Saved User: User{id=4856, name='name_5', username='username_5', hashword='{bcrypt}$2a$10$ffLFbCtV1ENrP4jjrkuJqObifIkW9IbcPP8cQZeuWW9sEIFgMQY.i', startTime=2023-11-15T06:28:28.729321Z, role=[Role{id=3, name='GUESTTEST', description='Guest Test Role'}]}
+2023-11-15T11:58:34.275+05:30  INFO 25170 --- [o-auto-1-exec-9] com.app.common.user.UserController       : Saved User: User{id=4857, name='name_6', username='username_6', hashword='{bcrypt}$2a$10$PMo8CMFlVNwZ2m.KDutPF.NHh0gVy.0/rsTukDX4bZeghED2O62Oa', startTime=2023-11-15T06:28:28.729325Z, role=[Role{id=1, name='ADMINTEST', description='Admin Test Role'}]}
+2023-11-15T11:58:34.350+05:30  INFO 25170 --- [-auto-1-exec-10] com.app.common.user.UserController       : Saved User: User{id=4858, name='name_7', username='username_7', hashword='{bcrypt}$2a$10$hdEUNXOHqb2kQGtlXvbrXOp4PcABbMKZa8Nz/DR9iOFpfrO6h2L8S', startTime=2023-11-15T06:28:28.729329Z, role=[Role{id=2, name='USERTEST', description='User Test Role'}]}
+2023-11-15T11:58:34.424+05:30  INFO 25170 --- [o-auto-1-exec-1] com.app.common.user.UserController       : Saved User: User{id=4859, name='name_8', username='username_8', hashword='{bcrypt}$2a$10$VOEBcitLWgZYs0YzaeCPTOH4PQlVpBgR1DDKAmITPhaxlxCPx0V3u', startTime=2023-11-15T06:28:28.729333Z, role=[Role{id=3, name='GUESTTEST', description='Guest Test Role'}]}
+2023-11-15T11:58:34.498+05:30  INFO 25170 --- [o-auto-1-exec-2] com.app.common.user.UserController       : Saved User: User{id=4860, name='name_9', username='username_9', hashword='{bcrypt}$2a$10$zJEKSn03rWdcmcF00XIHE.5vZTOvf5GfsTbBNnT8GdmpTObCOedQ2', startTime=2023-11-15T06:28:28.729338Z, role=[Role{id=1, name='ADMINTEST', description='Admin Test Role'}]}
+2023-11-15T11:58:34.653+05:30  INFO 25170 --- [o-auto-1-exec-3] com.app.common.user.UserController       : Login Successful for user: User{id=4852, name='name_1', username='amanpreetsingh', hashword='{bcrypt}$2a$10$uZ6PFwEmQXLZ/9IT2XpA5uGIz3gf/vnzaudmktMRvzNr.40FeyRkq', startTime=2023-11-15T06:28:28.729281Z, role=[Role{id=2, name='USERTEST', description='User Test Role'}]}
+2023-11-15T11:58:34.661+05:30  INFO 25170 --- [    Test worker] com.app.beforeall.BeforeAllTests         : Response: &lt;200 OK OK,com.app.config.security.AuthResponseDTO@2e856aa4,[X-Content-Type-Options:&quot;nosniff&quot;, X-XSS-Protection:&quot;0&quot;, Cache-Control:&quot;no-cache, no-store, max-age=0, must-revalidate&quot;, Pragma:&quot;no-cache&quot;, Expires:&quot;0&quot;, X-Frame-Options:&quot;DENY&quot;, Content-Type:&quot;application/json&quot;, Transfer-Encoding:&quot;chunked&quot;, Date:&quot;Wed, 15 Nov 2023 06:28:33 GMT&quot;, Keep-Alive:&quot;timeout=60&quot;, Connection:&quot;keep-alive&quot;]&gt;
+2023-11-15T11:58:34.663+05:30  INFO 25170 --- [    Test worker] com.app.beforeall.BeforeAllTests         : Token: eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJzdWIiOiJhbWFucHJlZXRzaW5naCIsInJvbGVzIjpbIlVTRVJURVNUIl0sImV4cCI6MTcwMDYzNDUxNCwiaWF0IjoxNzAwMDI5NzE0fQ.vabuEDkmc21yXbMGdjh_Ml1DEjdhFnTZDh4-3N-k0KM
+</pre>
+</span>
+</div>
+</div>
+<div id="footer">
+<p>
+<div>
+<label class="hidden" id="label-for-line-wrapping-toggle" for="line-wrapping-toggle">Wrap lines
+<input id="line-wrapping-toggle" type="checkbox" autocomplete="off"/>
+</label>
+</div>Generated by 
+<a href="http://www.gradle.org">Gradle 8.3</a> at 15 Nov 2023, 11:58:35</p>
+</div>
+</div>
+</body>
+</html>

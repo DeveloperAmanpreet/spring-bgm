@@ -1,0 +1,18 @@
+<configuration>
+    <appender class="ch.qos.logback.core.ConsoleAppender" name="STDOUT">
+        <encoder>
+            <pattern>%cyan(%d{HH:mm:ss.SSS}) [%thread] %-5level %magenta(%logger{36}) - [%M:%line] - %msg%n</pattern>
+<!--            <pattern>%cyan(%d{HH:mm:ss.SSS}) %green([%X{trace}] [%X{tenantId}]) %blue([%thread]) %gray([${HOSTNAME}])-->
+<!--                %highlight(%-5level) %magenta(%logger{36})-->
+<!--                [%M:%line] - %msg%n-->
+<!--            </pattern>-->
+            <!--&lt;!&ndash;            Use the below pattern to see error messages more clearly reducing noise in log stream&ndash;&gt;-->
+            <!--           <pattern> %d{HH:mm:ss.SSS} | [%X{trace}] [%X{tenantId}]  | %-25.25logger{25} | %highlight(%-5level) | %m%n</pattern>-->
+            <ImmediateFlush>true</ImmediateFlush>
+        </encoder>
+    </appender>
+
+    <root level="info">
+        <appender-ref ref="STDOUT"/>
+    </root>
+</configuration>
