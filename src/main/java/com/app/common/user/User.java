@@ -9,6 +9,7 @@ import jakarta.persistence.Id;
 import jakarta.persistence.JoinColumn;
 import jakarta.persistence.JoinTable;
 import jakarta.persistence.ManyToMany;
+import jakarta.persistence.ManyToOne;
 import jakarta.persistence.Table;
 import lombok.AllArgsConstructor;
 import lombok.Getter;
@@ -16,9 +17,8 @@ import lombok.NoArgsConstructor;
 import lombok.Setter;
 
 import java.time.Instant;
-import java.util.HashSet;
+import java.util.Collection;
 import java.util.Objects;
-import java.util.Set;
 
 // https://docs.spring.io/spring-boot/docs/2.1.x/reference/html/howto-database-initialization.html
 
@@ -28,7 +28,7 @@ import java.util.Set;
 @NoArgsConstructor
 @AllArgsConstructor
 @Table(name = "users")
-public class User{
+public class User {
     @Id
     @GeneratedValue(strategy = GenerationType.AUTO)
     Long id;
@@ -43,16 +43,14 @@ public class User{
     @Column(name = "start_time")
     Instant startTime;
 
-    @ManyToMany()
-    @JoinTable(
-        joinColumns = {
-            @JoinColumn(name = "role_id")
-        },
-        inverseJoinColumns = {
-            @JoinColumn(name = "id") }
-    )
-    Set<Role> role;
-
+  @ManyToMany
+  @JoinTable(
+      name = "users_role",
+      joinColumns = @JoinColumn(
+          name = "id", referencedColumnName = "id"),
+      inverseJoinColumns = @JoinColumn(
+          name = "role_id", referencedColumnName = "id"))
+  private Collection<Role> roles;
 
   /*
   // Multiple Roles
@@ -72,7 +70,7 @@ public class User{
                 ", username='" + username + '\'' +
                 ", hashword='" + hashword + '\'' +
                 ", startTime=" + startTime +
-                ", role=" + role +
+                ", role=" + roles +
                 '}';
     }
 
@@ -83,15 +81,14 @@ public class User{
         return Objects.equals(user.getId(), id)
             && Objects.equals(user.getName(), name)
             && Objects.equals(user.getUsername(), username)
-            && Objects.equals(user.getStartTime(), startTime)
-            && equalsRole(user.role);
+            && Objects.equals(user.getStartTime(), startTime);
       }
       return false;
     }
 
-    private boolean equalsRole(Set<Role> other) {
-        if (this.getRole().size() == other.size()){
-          for(Role role : this.getRole()){
+    private boolean equalsRole(Collection<Role> other) {
+        if (this.getRoles().size() == other.size()){
+          for(Role role : this.getRoles()){
               if(!other.contains(role)){
                   return false;
               }

@@ -5,7 +5,9 @@ import com.app.Utils.Utils;
 import com.app.common.user.Constants;
 import com.app.common.user.LoginData;
 import com.app.common.user.Role.Role;
+import com.app.common.user.Role.RoleDto;
 import com.app.common.user.User;
+import com.app.common.user.UserDto;
 import com.app.config.security.AuthResponseDTO;
 import com.jayway.jsonpath.DocumentContext;
 import com.jayway.jsonpath.JsonPath;
@@ -38,8 +40,8 @@ class BeforeAllTests {
   @Autowired
   TestRestTemplate restTemplate;
 
-  static List<User> userList;
-  static List<Role> roleList;
+  static List<UserDto> userList;
+  static List<RoleDto> roleList;
 
   static String token;
 

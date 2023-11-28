@@ -3,19 +3,17 @@ package com.app.calender.service;
 import com.app.calender.dto.EventDto;
 import com.app.calender.repos.EventRepository;
 import com.app.calender.store.sql.Event;
-import com.app.common.user.User;
+import com.app.common.user.UserDto;
 import com.app.common.user.UserService;
 import lombok.extern.slf4j.Slf4j;
 import org.springframework.data.domain.Page;
 import org.springframework.data.domain.PageRequest;
 import org.springframework.data.domain.Pageable;
 import org.springframework.data.domain.Sort;
-import org.springframework.stereotype.Component;
 import org.springframework.stereotype.Service;
 
 import java.time.Instant;
 import java.util.Optional;
-import java.util.UUID;
 
 @Slf4j
 @Service
@@ -42,8 +40,8 @@ public class EventService {
 
   public Optional<EventDto> getByIdAndUser(Long id, String owner) {
     log.info("Started getByIdAndUser");
-    User user = this.userService.getUserByUsername(owner);
-    Optional<Event> event = Optional.ofNullable(this.eventRepository.findByIdAndOwner(id, user.getId()));
+    UserDto userDto = this.userService.getUserByUsername(owner);
+    Optional<Event> event = Optional.ofNullable(this.eventRepository.findByIdAndOwner(id, userDto.getId()));
     EventDto eventDto = null;
     if(event.isPresent()) {
       eventDto = EventDto.builder()
@@ -56,15 +54,15 @@ public class EventService {
 
   public Page<EventDto> getAllEventsByUser(Pageable pageable, String username) throws Exception {
     log.info("Started getAllEventsByUser");
-    User user = this.userService.getUserByUsername(username);
+    UserDto userDto = this.userService.getUserByUsername(username);
 
-    if(user == null){
+    if(userDto == null){
       throw new Exception(username + ": user not found");
     }
-    log.info("User found with id: " + user.getId());
+    log.info("User found with id: " + userDto.getId());
 
     Page<Event> page = this.eventRepository.findByOwner(
-        user.getId(),
+        userDto.getId(),
         PageRequest.of(
             pageable.getPageNumber(),
             pageable.getPageSize(),
@@ -96,11 +94,11 @@ public class EventService {
   }
 
   public Event saveEvent(EventDto eventDto) throws Exception {
-    User user = this.userService.getUserByUsername(eventDto.getOwnerUsername());
-    if(user == null) {
+    UserDto userDto = this.userService.getUserByUsername(eventDto.getOwnerUsername());
+    if(userDto == null) {
       throw new Exception( eventDto.getOwnerUsername()+" : User not found");
     }
-    Event event = new Event(eventDto.getId(), eventDto.getName(), user.getId(), Instant.now());
+    Event event = new Event(eventDto.getId(), eventDto.getName(), userDto.getId(), Instant.now());
     return this.eventRepository.save(event);
   }
 

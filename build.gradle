@@ -31,6 +31,9 @@ dependencies {
 	implementation 'de.mkammerer:argon2-jvm:2.11'
 	implementation 'com.auth0:java-jwt:4.3.0'
 
+	// Dto to Entity mappings
+	implementation 'org.modelmapper:modelmapper:3.1.1'
+
 	//lombok
 	compileOnly 'org.projectlombok:lombok'
 	annotationProcessor 'org.projectlombok:lombok'

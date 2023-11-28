@@ -3,23 +3,17 @@ package com.app.beforeall;
 
 import com.app.Utils.Utils;
 import com.app.common.user.Constants;
-import com.app.common.user.Role.Role;
+import com.app.common.user.Role.RoleDto;
 import com.app.common.user.User;
+import com.app.common.user.UserDto;
 import lombok.extern.slf4j.Slf4j;
-import org.aspectj.weaver.patterns.IToken;
 import org.junit.jupiter.api.BeforeAll;
-import org.junit.jupiter.api.ClassOrderer;
 import org.junit.jupiter.api.Order;
 import org.junit.jupiter.api.Test;
-import org.junit.jupiter.api.TestClassOrder;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.boot.test.context.SpringBootTest;
 import org.springframework.boot.test.web.client.TestRestTemplate;
-import org.springframework.http.HttpEntity;
-import org.springframework.http.HttpHeaders;
-import org.springframework.http.HttpMethod;
-import org.springframework.http.HttpStatus;
-import org.springframework.http.ResponseEntity;
+import org.springframework.http.*;
 
 import java.util.List;
 
@@ -33,8 +27,8 @@ class AfterAllTests {
   @Autowired
   TestRestTemplate restTemplate;
 
-  static List<User> userList;
-  static List<Role> roleList;
+  static List<UserDto> userList;
+  static List<RoleDto> roleList;
   static String token;
 
   @BeforeAll

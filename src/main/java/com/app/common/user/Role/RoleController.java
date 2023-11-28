@@ -24,20 +24,21 @@ import java.net.URI;
 public class RoleController {
 
 
-  private final RoleRepository roleRepository;
+  private RoleService roleService;
 
-  public RoleController(RoleRepository roleRepository) {
-    this.roleRepository = roleRepository;
+  public RoleController(RoleService roleService) {
+    this.roleService = roleService;
   }
 
+
   @GetMapping("/{id}")
-  public Role getById(Long id) {
-    return roleRepository.getReferenceById(id);
+  public Role getById(@PathVariable Long id) {
+    return roleService.getById(id);
   }
 
   @PostMapping
   public ResponseEntity<Void> createNewUser(@RequestBody Role role, UriComponentsBuilder ucb) {
-    Role savedRole = roleRepository.save(role);
+    Role savedRole = roleService.create(role);
 
     log.info("Saved role: {}", savedRole);
     URI locationOfNewCashCard = ucb
@@ -56,7 +57,7 @@ public class RoleController {
   public ResponseEntity<String> deleteRole(@PathVariable Long id) {
     log.info("Deleting role: {}", id);
     try {
-      roleRepository.deleteById(id);
+      roleService.deleteById(id);
     } catch (EntityNotFoundException e) {
       log.error("Entity not found: {}", id);
       return ResponseEntity.status(HttpStatus.NOT_FOUND).build();

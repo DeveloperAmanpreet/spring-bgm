@@ -1,15 +1,18 @@
 package com.app.common.user.Role;
 
 
+import com.app.common.user.User;
 import jakarta.persistence.Entity;
 import jakarta.persistence.GeneratedValue;
 import jakarta.persistence.GenerationType;
 import jakarta.persistence.Id;
+import jakarta.persistence.ManyToMany;
 import lombok.AllArgsConstructor;
 import lombok.Getter;
 import lombok.NoArgsConstructor;
 import lombok.Setter;
 
+import java.util.Collection;
 import java.util.Objects;
 
 @Getter
@@ -20,10 +23,14 @@ import java.util.Objects;
 public class Role {
 
   @Id
+  @GeneratedValue(strategy = GenerationType.AUTO)
   Long id;
 
   String name;
   String description;
+
+  @ManyToMany(mappedBy = "roles")
+  private Collection<User> users;
 
   @Override
   public String toString() {

@@ -4,7 +4,9 @@ package com.app;
 import com.app.Utils.Utils;
 import com.app.common.user.Constants;
 import com.app.common.user.Role.Role;
+import com.app.common.user.Role.RoleDto;
 import com.app.common.user.User;
+import com.app.common.user.UserDto;
 import lombok.extern.slf4j.Slf4j;
 import org.junit.jupiter.api.BeforeAll;
 import org.junit.jupiter.api.MethodOrderer;
@@ -39,7 +41,7 @@ public class UserTests {
   @Autowired
   TestRestTemplate restTemplate;
 
-  static User user;
+  static UserDto user;
   static HttpHeaders headers;
 
   @BeforeAll
@@ -52,8 +54,8 @@ public class UserTests {
   @Test
   @Order(1)
   void shouldReturnNotFoundForNonExistentUser() {
-    ResponseEntity<User> response = restTemplate
-        .exchange(Constants.URI.USER + "/" + 91238127, HttpMethod.GET, new HttpEntity<>(null, headers), User.class);
+    ResponseEntity<UserDto> response = restTemplate
+        .exchange(Constants.URI.USER + "/" + 91238127, HttpMethod.GET, new HttpEntity<>(null, headers), UserDto.class);
 
     assertThat(response.getStatusCode()).isEqualTo(HttpStatus.NOT_FOUND);
     assertThat(response.getBody()).isNull();
@@ -62,17 +64,17 @@ public class UserTests {
   @Test
   @Order(2)
   void shouldCreateUserSuccessfully() {
-    Role role = Utils.getTestRoles().get(1);
-    Set<Role> roles = new HashSet<>();
-    roles.add(role);
-    user = new User(
+    RoleDto roleDto  = Utils.getTestRoles().get(1);
+    Set<RoleDto> rolesDto = new HashSet<>();
+    rolesDto.add(roleDto);
+    user = new UserDto(
         3213214L, "name_" + 3213214,
         "username_" + 3213214,
         "username_" + 3213214 + "@email.com",
         "hashword_" + 3213214, Instant.now(),
-        roles);
-    ResponseEntity<User> response = restTemplate
-        .exchange(Constants.URI.USER, HttpMethod.POST, new HttpEntity<>(user, headers), User.class);
+        rolesDto.stream().map(RoleDto::getName).toList());
+    ResponseEntity<UserDto> response = restTemplate
+        .exchange(Constants.URI.USER, HttpMethod.POST, new HttpEntity<>(user, headers), UserDto.class);
 
     assertThat(response.getStatusCode()).isEqualTo(HttpStatus.CREATED);
 
@@ -83,12 +85,12 @@ public class UserTests {
     shouldGetUserDetailsSuccessfully(locationOfNewUser, user);
   }
 
-  private void shouldGetUserDetailsSuccessfully(URI locationOfNewUser, User expectedUser) {
-    ResponseEntity<User> getResponse = restTemplate
-        .exchange(locationOfNewUser, HttpMethod.GET, new HttpEntity<>(user, headers), User.class);
+  private void shouldGetUserDetailsSuccessfully(URI locationOfNewUser, UserDto expectedUser) {
+    ResponseEntity<UserDto> getResponse = restTemplate
+        .exchange(locationOfNewUser, HttpMethod.GET, new HttpEntity<>(user, headers), UserDto.class);
 
     assertThat(getResponse.getStatusCode()).isEqualTo(HttpStatus.OK);
-    User actualUser = Objects.requireNonNull(getResponse.getBody());
+    UserDto actualUser = Objects.requireNonNull(getResponse.getBody());
     assertEquals(expectedUser, actualUser);
     // TODO check that the hash is generated correctly each time
   }
@@ -101,15 +103,15 @@ public class UserTests {
 
     assertThat(response.getStatusCode()).isEqualTo(HttpStatus.OK);
 
-    ResponseEntity<User> getResponse = restTemplate
-        .exchange(Constants.URI.USER + "/" + user.getId(), HttpMethod.GET, new HttpEntity<>(user, headers), User.class);
+    ResponseEntity<UserDto> getResponse = restTemplate
+        .exchange(Constants.URI.USER + "/" + user.getId(), HttpMethod.GET, new HttpEntity<>(user, headers), UserDto.class);
     assertThat(getResponse.getStatusCode()).isEqualTo(HttpStatus.NOT_FOUND);
   }
 
   @Test
   void shouldReturnAnExistingUser() {
-    User user = Utils.getTestUsers().get(1);
-    shouldGetUserDetailsSuccessfully(URI.create(Constants.URI.USER + "/" + user.getId()), user);
+    UserDto userDto = Utils.getTestUsers().get(1);
+    shouldGetUserDetailsSuccessfully(URI.create(Constants.URI.USER + "/" + userDto.getId()), userDto);
   }
 
   @Test

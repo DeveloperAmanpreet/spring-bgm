@@ -1,7 +1,11 @@
 package com.app.Utils;
 
 import com.app.common.user.Role.Role;
+import com.app.common.user.Role.RoleDto;
 import com.app.common.user.User;
+import com.app.common.user.UserConverter;
+import com.app.common.user.UserDto;
+import org.modelmapper.ModelMapper;
 import org.springframework.security.crypto.factory.PasswordEncoderFactories;
 import org.springframework.security.crypto.password.PasswordEncoder;
 
@@ -13,8 +17,20 @@ import java.util.Set;
 
 public class Utils {
 
-  static List<User> userList;
-  static List<Role> roleList;
+  private static ModelMapper modelMapper;
+
+  public static ModelMapper getModelMapper() {
+    modelMapper = new ModelMapper();
+    modelMapper.getConfiguration()
+      .setFieldMatchingEnabled(true)
+      .setFieldAccessLevel(org.modelmapper.config.Configuration.AccessLevel.PRIVATE);
+    modelMapper.addConverter(new UserConverter());
+
+    return modelMapper;
+  }
+
+  static List<UserDto> userList;
+  static List<RoleDto> roleList;
 
   static String token;
   static PasswordEncoder passwordEncoder;
@@ -32,21 +48,21 @@ public class Utils {
     getTestUsers();
   }
 
-  public static List<User> getTestUsers() {
+  public static List<UserDto> getTestUsers() {
 
     if(userList == null) {
       userList = new ArrayList<>();
 
       for (int i = 1; i < 10; i++) {
-        Role role = roleList.get(i % 3);
-        Set<Role> roles = new HashSet<>();
-        roles.add(role);
-        User user = new User(((long) i), "name_" + i, "username_" + i, "username_"+i+ "@email.com", "hashword_" + i, Instant.now(), roles);
+        RoleDto roleDto = roleList.get(i % 3);
+        List<String> roles = new ArrayList<>();
+        roles.add(roleDto.getName());
+        UserDto userDto = new UserDto(((long) i), "name_" + i, "username_" + i, "username_"+i+ "@email.com", "hashword_" + i, Instant.now(), roles);
         if (i == 1) {
-          user.setUsername("amanpreetsingh");
+          userDto.setUsername("amanpreetsingh");
         }
 
-        userList.add(user);
+        userList.add(userDto);
       }
     }
 
@@ -60,23 +76,23 @@ public class Utils {
       return passwordEncoder;
   }
 
-  public static List<Role> getTestRoles() {
+  public static List<RoleDto> getTestRoles() {
     if (roleList == null) {
       roleList = new ArrayList<>();
 
-      Role roleAdmin = new Role();
+      RoleDto roleAdmin = new RoleDto();
       roleAdmin.setId(1L);
       roleAdmin.setName("ADMINTEST");
       roleAdmin.setDescription("Admin Test Role");
       roleList.add(roleAdmin);
 
-      Role roleUser = new Role();
+      RoleDto roleUser = new RoleDto();
       roleUser.setId(2L);
       roleUser.setName("USERTEST");
       roleUser.setDescription("User Test Role");
       roleList.add(roleUser);
 
-      Role roleGuestTest = new Role();
+      RoleDto roleGuestTest = new RoleDto();
       roleGuestTest.setId(3L);
       roleGuestTest.setName("GUESTTEST");
       roleGuestTest.setDescription("Guest Test Role");
@@ -100,7 +116,7 @@ public class Utils {
 
   }
 
-  public static void setUserList(List<User> userList) {
+  public static void setUserList(List<UserDto> userList) {
     Utils.userList = userList;
   }
 }
