@@ -1,8 +1,7 @@
 package com.app.Utils;
 
-import com.app.common.user.Role.Role;
-import com.app.common.user.Role.RoleDto;
-import com.app.common.user.User;
+import com.app.common.Role.Role;
+import com.app.common.Role.RoleDto;
 import com.app.common.user.UserConverter;
 import com.app.common.user.UserDto;
 import org.modelmapper.ModelMapper;
@@ -11,9 +10,7 @@ import org.springframework.security.crypto.password.PasswordEncoder;
 
 import java.time.Instant;
 import java.util.ArrayList;
-import java.util.HashSet;
 import java.util.List;
-import java.util.Set;
 
 public class Utils {
 

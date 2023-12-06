@@ -2,10 +2,8 @@ package com.app;
 
 
 import com.app.Utils.Utils;
-import com.app.common.user.Constants;
-import com.app.common.user.Role.Role;
-import com.app.common.user.Role.RoleDto;
-import com.app.common.user.User;
+import com.app.common.utils.Constants;
+import com.app.common.Role.RoleDto;
 import com.app.common.user.UserDto;
 import lombok.extern.slf4j.Slf4j;
 import org.junit.jupiter.api.BeforeAll;

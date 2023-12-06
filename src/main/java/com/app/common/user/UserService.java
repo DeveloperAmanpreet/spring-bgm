@@ -1,7 +1,8 @@
 package com.app.common.user;
 
-import com.app.common.user.Role.Role;
-import com.app.common.user.Role.RoleService;
+import com.app.common.Role.Role;
+import com.app.common.Role.RoleService;
+import com.app.preRegister.RegisterDTO;
 import jakarta.persistence.EntityNotFoundException;
 import jakarta.transaction.Transactional;
 import lombok.extern.slf4j.Slf4j;

@@ -1,6 +1,6 @@
 package com.app.cashcard;
 
-import com.app.common.user.Constants;
+import com.app.common.utils.Constants;
 import org.springframework.data.domain.Page;
 import org.springframework.data.domain.PageRequest;
 import org.springframework.data.domain.Pageable;
@@ -12,7 +12,6 @@ import org.springframework.web.util.UriComponentsBuilder;
 import java.net.URI;
 import java.security.Principal;
 import java.util.List;
-import java.security.Principal;
 
 @RestController
 @RequestMapping(Constants.URI.CASH_CARD)

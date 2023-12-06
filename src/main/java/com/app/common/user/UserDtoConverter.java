@@ -1,11 +1,9 @@
 package com.app.common.user;
 
-import com.app.common.user.Role.Role;
-import com.app.common.user.Role.RoleDto;
+import com.app.common.Role.Role;
 import org.modelmapper.AbstractConverter;
 
 import java.util.Collection;
-import java.util.List;
 import java.util.stream.Collectors;
 
 public class UserDtoConverter extends AbstractConverter<UserDto, User> {

@@ -1,4 +1,4 @@
-package com.app.common.user;
+package com.app.common.utils;
 
 public class Constants {
 
@@ -8,6 +8,8 @@ public class Constants {
   }
 
   public class URI {
+
+    public static final String CAPTCHA = "/captcha";
     public static final String USER = "/users";
     public static final String ROLE = "/roles";
     public static final String CARD = "/cards";
@@ -27,6 +29,7 @@ public class Constants {
     public static final String REFRESH_TOKEN = "/refresh-token";
 
 
+    public static final String PRE_REGISTER = "/pre-register";
   }
 
   public class USER {

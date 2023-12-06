@@ -1,6 +1,6 @@
 package com.app.common.user;
 
-import com.app.common.user.Role.Role;
+import com.app.common.Role.Role;
 import lombok.extern.slf4j.Slf4j;
 import org.modelmapper.AbstractConverter;
 

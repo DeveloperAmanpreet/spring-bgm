@@ -1,10 +1,10 @@
 package com.app.common.user;
 
+import com.app.common.utils.Constants;
 import com.app.config.security.AuthResponseDTO;
 import com.app.config.security.JWTAuthentication;
 import com.app.config.security.JWTService;
 import jakarta.persistence.EntityNotFoundException;
-import jakarta.transaction.Transactional;
 import lombok.extern.slf4j.Slf4j;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
@@ -13,7 +13,6 @@ import org.springframework.web.bind.annotation.*;
 import org.springframework.web.util.UriComponentsBuilder;
 
 import java.net.URI;
-import java.util.Arrays;
 import java.util.List;
 
 @CrossOrigin( origins = {"*"} , maxAge = 3600)

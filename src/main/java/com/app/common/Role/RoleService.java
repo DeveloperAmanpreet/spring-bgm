@@ -1,8 +1,6 @@
-package com.app.common.user.Role;
+package com.app.common.Role;
 
 import org.springframework.stereotype.Service;
-
-import java.util.List;
 
 @Service
 public class RoleService {

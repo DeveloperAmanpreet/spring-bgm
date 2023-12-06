@@ -2,9 +2,8 @@ package com.app.calender.controller;
 
 import com.app.calender.dto.EventDto;
 import com.app.calender.service.EventService;
-import com.app.common.user.Constants;
+import com.app.common.utils.Constants;
 import lombok.extern.slf4j.Slf4j;
-import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.data.domain.Page;
 import org.springframework.data.domain.Pageable;
 import org.springframework.http.ResponseEntity;

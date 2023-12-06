@@ -1,4 +1,4 @@
-package com.app.common.user.Role;
+package com.app.common.Role;
 
 
 import com.app.common.user.User;

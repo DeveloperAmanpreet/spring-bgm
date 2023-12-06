@@ -1,7 +1,7 @@
-package com.app.common.user.Role;
+package com.app.common.Role;
 
 
-import com.app.common.user.Constants;
+import com.app.common.utils.Constants;
 import jakarta.persistence.EntityNotFoundException;
 import lombok.extern.slf4j.Slf4j;
 import org.springframework.http.HttpStatus;

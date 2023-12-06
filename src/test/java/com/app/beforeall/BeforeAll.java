@@ -2,23 +2,16 @@ package com.app.beforeall;
 
 
 import com.app.Utils.Utils;
-import com.app.common.user.Constants;
+import com.app.common.utils.Constants;
 import com.app.common.user.LoginData;
-import com.app.common.user.Role.Role;
-import com.app.common.user.Role.RoleDto;
+import com.app.common.Role.RoleDto;
 import com.app.common.user.User;
 import com.app.common.user.UserDto;
 import com.app.config.security.AuthResponseDTO;
-import com.jayway.jsonpath.DocumentContext;
-import com.jayway.jsonpath.JsonPath;
-import jdk.jshell.execution.Util;
 import lombok.extern.slf4j.Slf4j;
-import org.apache.coyote.Response;
 import org.junit.jupiter.api.BeforeAll;
-import org.junit.jupiter.api.ClassOrderer;
 import org.junit.jupiter.api.Order;
 import org.junit.jupiter.api.Test;
-import org.junit.jupiter.api.TestClassOrder;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.boot.test.context.SpringBootTest;
 import org.springframework.boot.test.web.client.TestRestTemplate;
@@ -28,7 +21,6 @@ import org.springframework.http.ResponseEntity;
 import java.net.URI;
 import java.util.List;
 
-import static org.assertj.core.api.Assertions.as;
 import static org.assertj.core.api.Assertions.assertThat;
 import static org.junit.jupiter.api.Assertions.assertNotNull;
 
